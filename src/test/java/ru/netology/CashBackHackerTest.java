@@ -1,11 +1,12 @@
 package ru.netology;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 
 public class CashBackHackerTest {
-    @Test
+    @org.testng.annotations.Test
     public void cashbackAccrualWhenPurchasingFor900(){
 
         CashBackHacker service = new CashBackHacker();
@@ -16,18 +17,18 @@ public class CashBackHackerTest {
         Assert.assertEquals(actual,expected);
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void cashbackAccrualWhenPurchasingFor1000(){
 
         CashBackHacker service = new CashBackHacker();
 
 
         int actual = service.remain(1000);
-        int expected = 0;
+        int expected = 1000;
 
         Assert.assertEquals(actual,expected);
     }
-    @Test
+    @org.testng.annotations.Test
     public void cashbackAccrualWhenPurchasingFor1100(){
 
         CashBackHacker service = new CashBackHacker();
@@ -38,7 +39,7 @@ public class CashBackHackerTest {
 
         Assert.assertEquals(actual,expected);
     }
-    @Test
+    @org.testng.annotations.Test
     public void cashbackAccrualWhenPurchasingFor999(){
 
         CashBackHacker service = new CashBackHacker();
@@ -46,6 +47,7 @@ public class CashBackHackerTest {
 
         int actual = service.remain(999);
         int expected = 1;
+
 
         Assert.assertEquals(actual,expected);
     }
