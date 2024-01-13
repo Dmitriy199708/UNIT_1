@@ -1,50 +1,43 @@
 package ru.netology;
 
+import org.junit.Test;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.*;
 
 public class CashBackHackerTest {
-    @org.testng.annotations.Test
-    public void cashbackAccrualWhenPurchasingFor900() {
+    CashBackHacker service = new CashBackHacker();
 
-        CashBackHacker service = new CashBackHacker();
-
-        int actual = service.remain(900);
-        int expected = 100;
+    @Test
+    public void shouldCalculateIfAmountCorrect() {
+        int amount = 5700;
+        int actual = service.remain(amount);
+        int expected = 300;
         assertEquals(actual, expected);
     }
 
-    @org.testng.annotations.Test
-    public void cashbackAccrualWhenPurchasingFor1000() {
-        CashBackHacker service = new CashBackHacker();
-        int actual = service.remain(1000);
+    @Test
+    public void shouldCalculateIfAmountZero() {
+        int amount = 0;
+        int actual = service.remain(amount);
         int expected = 1000;
-
-        assertEquals(actual, expected);
-    }
-    @org.testng.annotations.Test
-    public void cashbackAccrualWhenPurchasingFor1100() {
-
-        CashBackHacker service = new CashBackHacker();
-
-
-        int actual = service.remain(1000);
-        int expected = 1000;
-
         assertEquals(actual, expected);
     }
 
-    @org.testng.annotations.Test
-    public void cashbackAccrualWhenPurchasingFor999() {
+    @Test
+    public void shouldCalculateIfAmount1000() {
+        int amount = 1000;
+        int actual = service.remain(amount);
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
 
-        CashBackHacker service = new CashBackHacker();
-
-
-        int actual = service.remain(999);
-        int expected = 1;
-
+    @Test
+    public void shouldCalculateIfAmountIncorrect() {
+        int amount = -50000;
+        int actual = service.remain(amount);
+        int expected = 0;
         assertEquals(actual, expected);
     }
 
