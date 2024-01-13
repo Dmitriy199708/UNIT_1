@@ -2,8 +2,13 @@ plugins {
     id 'java'
 }
 
-group = 'ru.netology'
-version = '1.0-SNAPSHOT'
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 11
+repositories {
+    mavenCentral()
+}
+
 
 repositories {
     mavenCentral()
@@ -11,7 +16,6 @@ repositories {
 
 dependencies {
     testImplementation 'org.testng:testng:7.1.0'
-
 }
 
 test {
