@@ -1,10 +1,10 @@
 package ru.netology;
 
 import org.junit.Test;
-import org.testng.Assert;
+
 
 import static org.junit.Assert.assertEquals;
-import static org.testng.Assert.*;
+
 
 public class CashBackHackerTest {
     CashBackHacker service = new CashBackHacker();
